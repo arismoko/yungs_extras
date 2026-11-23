@@ -1,0 +1,22 @@
+summary = "Swamp ruins and desert decorations: arches, pillars, a ruined church, wells with suspicious sand, obelisks and more."
+description = """
+Swamp ruins and desert decorations: arches, pillars, a ruined church, wells with suspicious sand, obelisks and more.
+
+A port of [YUNG's Extras](https://github.com/YUNG-GANG/YUNGs-Extras) by YUNGNICKYOUNG to [Sunrise](https://playsunrise.net) (Minecraft Java 26.3). The original places its pieces from Java features; here each is a template feature with the original's ground checks written as placement data, so the mod has no code to run.
+
+What it does:
+
+- Swamps: 11 ruined arches, 22 double arches, 3 pillars, 8 cubbies, a ruined church and an ogre's hut, with mossy and cracked bricks, ruined stairs, brick supports down to the ground and coloured candles (one in ten lit).
+- Deserts: 9 wells (plain, dry and wishing wells in three sizes), whose sand hides suspicious sand with vanilla's desert-well loot, and in wishing wells the mod's own extra loot; 4 obelisks, a giant torch, small ruins and a chillzone with its loot chest.
+- The original's rarity, biome tags and ground checks: pieces only go on sand in deserts, and nothing hangs over a cliff.
+- Vanilla's desert well no longer generates where the mod's wells do, as in the original.
+
+Differences from the original:
+
+- Suspicious sand in wells is capped at three on average; the original draws a cap of two to four per well.
+"""
+categories = ["worldgen", "decoration"]
+
+[[screenshots]]
+path = "page/world.png"
+caption = "A ruined swamp arch."

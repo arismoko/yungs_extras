@@ -1,67 +1,34 @@
-# YUNG's Extras — a Horizon port
+# YUNG's Extras for Sunrise
 
-**YUNG's Extras** is a Minecraft mod. Extra structures and vanilla+ content added throughout Minecraft. This repository is a **port of it to [Horizon](https://github.com/horizon-rust/horizon)**, the Rust engine for Minecraft Java 26.3. It carries the complete source of the port plus the content files it ships, and installs as a single `.hmod` package.
+Swamp ruins and desert decorations: arches, pillars, a ruined church, wells with suspicious sand, obelisks and more.
 
-Upstream: [YUNG-GANG/YUNGs-Extras](https://github.com/YUNG-GANG/YUNGs-Extras) — licence **LGPL-3.0-only**.
+A port of [YUNG's Extras](https://github.com/YUNG-GANG/YUNGs-Extras) by YUNGNICKYOUNG to [Sunrise](https://playsunrise.net) (Minecraft Java 26.3). The original places its pieces from Java features; here each is a template feature with the original's ground checks written as placement data, so the mod has no code to run.
 
-| | |
-|---|---|
-| Upstream mod | YUNG's Extras ([source](https://github.com/YUNG-GANG/YUNGs-Extras)) |
-| Ported to | Horizon 0b14f8a, Minecraft Java 26.3, mod API `0.2` |
-| Package | `yungsextras.hmod` (install it with the Horizon launcher) |
-| Licence | **LGPL-3.0-only** — the upstream mod's licence; see [Licence and credit](#licence-and-credit) |
+## What it does
 
-## What this port implements
+- Swamps: 11 ruined arches, 22 double arches, 3 pillars, 8 cubbies, a ruined church and an ogre's hut, with mossy and cracked bricks, ruined stairs, brick supports down to the ground and coloured candles (one in ten lit).
+- Deserts: 9 wells (plain, dry and wishing wells in three sizes), whose sand hides suspicious sand with vanilla's desert-well loot, and in wishing wells the mod's own extra loot; 4 obelisks, a giant torch, small ruins and a chillzone with its loot chest.
+- The original's rarity, biome tags and ground checks: pieces only go on sand in deserts, and nothing hangs over a cliff.
+- Vanilla's desert well no longer generates where the mod's wells do, as in the original.
 
-| Family (`type`) | templates | dir | config | placement |
-| `yungsextras:swamp_arch` | 11 | `swamp/arch` | `location` | **shipped** |
-| `yungsextras:swamp_double_arch` | 22 | `swamp/double_arch` | `location` | blocked |
-| `yungsextras:swamp_cubby` | 8 | `swamp/cubby` | `location` | blocked |
-| `yungsextras:swamp_pillar` | 3 | `swamp/pillar` | `location` | blocked |
-| `yungsextras:swamp_church` | 1 | `swamp/misc` | `location` | blocked |
-| `yungsextras:swamp_ogre` | 1 | `swamp/misc` | `location` | blocked |
-| `yungsextras:desert_well` | 9 | `desert/wells` | `location`, `radius` | blocked |
-| `yungsextras:desert_obelisk` | 4 | `desert/obelisk` | `location` | blocked |
+## Differences from the original
 
-## Not yet ported
+- Suspicious sand in wells is capped at three on average; the original draws a cap of two to four per well.
 
-- **The generated arch is not asserted** (above): the descriptor and processors are
-- **Ten families place nowhere.** Their templates are `/place template`-able and a
-- **No `rng_initializer`, no offset-block terrain checks** (deviations 1 and 2).
-- **The wells' markers stay glass.** Their `brown`/`yellow_stained_glass` markers are
-- **No diagnostics.** The SDK exports no logger and a native mod may not add a crate;
-- **`side = both`** because the content and the worldgen it feeds belong to the server,
+## Building
 
-## Installing
+With the Sunrise mod tool (`cargo sunrise-mod`, from the Sunrise SDK) and Rust:
 
-1. Install the [Horizon launcher](https://github.com/horizon-rust/horizon/releases) (0.2.70 or newer).
-2. Add `yungsextras.hmod` to the instance's mods.
-3. The package is pinned to a specific Horizon build; the launcher checks that pin.
-
-## Licence and credit
-
-YUNG's Extras was created by its upstream authors; the code, models and assets in the original mod
-remain theirs and are used here under **LGPL-3.0-only**. The Rust in this repository is a clean-room
-rewrite for Horizon, not a translation of the original source.
-
-- `LICENSE` — the upstream licence text.
-- `LICENSE-NOTICE.md` — what this port carries and where it came from.
-- The upstream project: https://github.com/YUNG-GANG/YUNGs-Extras
-
-## Technical details
-
-```
-horizon-mod.toml   package manifest (id, version, api, [native] pin)
-Cargo.toml         the crate; depends on `horizon-mod-api` from the fetched SDK
-src/               lib.rs (the one `impl Hooks`), runtime.rs (pure logic + tests), glue
-assets/ data/      the content the package ships
-tools/             content generators and the e2e scenario
+```sh
+cargo sunrise-mod build    # compiles against the pinned game, packs target/sunrise-mod/yungsextras.smod
+cargo sunrise-mod run      # builds it and starts the game with it
+cargo test
 ```
 
-- Build: `cargo horizon-mod build` (packages; it does not compile against the game).
-- Test: `cargo test`, `cargo clippy --all-targets -- -D warnings`.
-- In-game: `ports/tools/launcher-game.sh run yungsextras` in the campaign tree, or install the
-  `.hmod` and play; the harness scenario is `tools/e2e.sh`.
+`sunrise-mod.toml` pins the Sunrise Dev build `dev-2026-11-22-7cfdf81` (game commit `7cfdf81463`). Sunrise builds native mods from source on the player's computer, against the exact game build.
 
-This repository is generated from the campaign's port at `ports/yungsextras/`; the port's own
-`notes.md` is the full record (decisions, traps, evidence).
+## Licence and credits
+
+YUNG's Extras is by YUNGNICKYOUNG (https://github.com/YUNG-GANG/YUNGs-Extras). Its templates, features and strings are theirs and are used here under the **GNU LGPL v3.0 only**, the original's licence; `LICENSE` holds the text and `LICENSE-NOTICE.md` says what this port carries.
+
+Carried to Minecraft 26.3 by AdLf0208 ([AdLf0208/yungs_extras](https://github.com/AdLf0208/yungs_extras)), and ported to Sunrise by arismoko. This port, its Rust included, is distributed under the same licence.

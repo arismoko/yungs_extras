@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:template",
+  "templates": [
+    {
+      "data": {
+        "id": "yungsextras:desert/misc/giant_torch",
+        "rotations": [
+          "none"
+        ]
+      },
+      "weight": 1
+    }
+  ]
+}

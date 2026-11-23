@@ -16,6 +16,46 @@
       "type": "minecraft:biome"
     },
     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:not",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air",
+                "minecraft:void_air"
+              ],
+              "offset": [
+                -2,
+                -5,
+                0
+              ]
+            }
+          },
+          {
+            "type": "minecraft:not",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air",
+                "minecraft:void_air"
+              ],
+              "offset": [
+                2,
+                -5,
+                0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "type": "minecraft:offset",
       "x": 0,
       "y": -1,

@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:template",
+  "templates": [
+    {
+      "data": {
+        "id": "yungsextras:desert/wells/well_lg",
+        "rotations": [
+          "none"
+        ]
+      },
+      "weight": 1
+    }
+  ],
+  "processors": [
+    {
+      "processor_type": "sunrise:pick",
+      "block": "minecraft:brown_stained_glass",
+      "picks": [],
+      "default": {
+        "state": {
+          "id": "minecraft:suspicious_sand"
+        },
+        "nbt": {
+          "LootTable": "minecraft:archaeology/desert_well"
+        }
+      }
+    },
+    {
+      "processor_type": "sunrise:count_cap",
+      "blocks": [
+        "minecraft:suspicious_sand"
+      ],
+      "min": 2,
+      "max": 3,
+      "chance": 0.1,
+      "replacement": {
+        "id": "minecraft:sand"
+      }
+    },
+    {
+      "processor_type": "sunrise:pick",
+      "block": "minecraft:yellow_stained_glass",
+      "picks": [
+        {
+          "below": 0.4,
+          "state": {
+            "id": "minecraft:suspicious_sand"
+          },
+          "nbt": {
+            "LootTable": "yungsextras:desert/extra_archeology"
+          }
+        }
+      ],
+      "default": {
+        "state": {
+          "id": "minecraft:sand"
+        }
+      }
+    }
+  ]
+}

@@ -1,22 +1,14 @@
 [package]
-# Port of YUNG's Extras 1.21.1-NeoForge-5.1.1 (yungnickyoung/YUNGs-Extras,
-# branch 1.21.1, version=5.1.1, LGPL-3.0-only). The carried templates, loot and
-# tags are the upstream mod's own LGPL-licensed data and travel under the same
-# licence (LICENSE, LICENSE-NOTICE.md); the rewritten worldgen JSON and the Rust
-# catalogue are this port's. This is the port's own version: the registry
-# version is the port's, not the original mod's.
-#
-# Cargo's name and version are not the mod's identity: horizon-mod.toml is.
-name = "horizon-yungsextras"
-version = "0.2.0"
+name = "mod-yungsextras"
+version = "0.3.0"
 edition = "2024"
 license = "LGPL-3.0-only"
-description = "YUNG's Extras' swamp and desert decoration templates for Horizon"
+description = "YUNG's Extras for Sunrise: swamp and desert decorations"
+# Ported from: YUNG's Extras 1.21.1-NeoForge (YUNG-GANG/YUNGs-Extras, LGPL-3.0-only), Minecraft Java 1.21.1. The data files are the upstream mod's own,
+# upgraded to 26.3; the Rust is written from the behaviour read in the upstream source.
+# Cargo's name and version are not the mod's identity: sunrise-mod.toml is.
 publish = false
 
 [dependencies]
-# The pinned SDK's API crate, fetched into .horizon/sdk/ by any `cargo horizon-mod`
-# command (the launcher builds against its own copy of the same build). Any other
-# registry dependency must be pinned with `horizon-launcher native-lock .` before
-# building; this port needs none.
-horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
+# The pinned SDK's API crate, fetched into .sunrise/sdk/ by any `cargo sunrise-mod` command.
+sunrise-mod-api = { path = ".sunrise/sdk/api/crates/sunrise-mod-api" }

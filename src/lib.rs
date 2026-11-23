@@ -1,20 +1,17 @@
-//! YUNG's Extras — the one `impl Hooks` at the crate root.
+//! YUNG's Extras: swamp ruins and desert decorations, placed by the world generation from data.
 //!
-//! The mod has no hook: its pieces are placed by the world generation, from data
-//! (`data/yungsextras/worldgen/`, `data/yungsextras/neoforge/biome_modifier/`),
-//! and its 62 templates are read by the game's own template reader. Nothing in
-//! this slice registers a block, an item, an entity or a structure type, so the
-//! `impl Hooks` below is empty on purpose.
-//!
-//! `src/runtime.rs` is the port's catalogue: what the jar registers, what the
-//! pin can place, and the tests that prove the carried files and the catalogue
-//! agree.
-pub mod runtime;
-
+//! The mod has no code to run. Each of the original's Java feature types placed one template
+//! centred on the surface after a few ground checks; here every piece is a `minecraft:template`
+//! feature (`data/yungsextras/worldgen/feature/`) whose placed feature carries those checks as
+//! block predicates (`worldgen/placed_feature/`), and the biome modifiers add them to swamps and
+//! deserts (`neoforge/biome_modifier/`). The tests check that the data hangs together.
 use mod_api::{self, Hooks};
 
 #[derive(Default)]
 struct Mod;
 
-#[mod_api::horizon_mod]
+#[mod_api::sunrise_mod]
 impl Hooks for Mod {}
+
+#[cfg(test)]
+mod data_tests;

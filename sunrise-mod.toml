@@ -1,0 +1,14 @@
+# YUNG's Extras for Sunrise: native code in src/ with its data/ and assets/.
+id = "yungsextras"
+name = "YUNG's Extras"
+version = "0.3.0"
+description = "Swamp ruins and desert decorations: arches, pillars, a ruined church, wells with suspicious sand, obelisks and more."
+authors = ["YUNGNICKYOUNG"]
+license = "LGPL-3.0-only"
+credits = "Ported to Minecraft 26.3 by AdLf0208, and to Sunrise by arismoko."
+homepage = "https://github.com/arismoko/yungs_extras"
+side = "both"
+
+[native]
+game = "26.3"
+sunrise = "7cfdf81463ebb4a19705768273909f7f3f03601d"

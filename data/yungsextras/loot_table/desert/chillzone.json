@@ -11,9 +11,9 @@
         {
           "type": "minecraft:item",
           "weight": 3,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "potion_contents": "minecraft:water"
               }
@@ -24,9 +24,9 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "min": 1.0,
                 "max": 4.0,

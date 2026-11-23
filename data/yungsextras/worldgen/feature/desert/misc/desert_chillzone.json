@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:template",
+  "templates": [
+    {
+      "data": {
+        "id": "yungsextras:desert/misc/chillzone",
+        "rotations": [
+          "none"
+        ]
+      },
+      "weight": 1
+    }
+  ]
+}

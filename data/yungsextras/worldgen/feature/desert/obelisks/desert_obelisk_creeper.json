@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:template",
+  "templates": [
+    {
+      "data": {
+        "id": "yungsextras:desert/obelisk/obelisk_creeper",
+        "rotations": [
+          "none"
+        ]
+      },
+      "weight": 1
+    }
+  ]
+}
