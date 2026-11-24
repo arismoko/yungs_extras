@@ -13,7 +13,7 @@ A port of [YUNG's Extras](https://github.com/YUNG-GANG/YUNGs-Extras) by YUNGNICK
 
 ## Differences from the original
 
-- Suspicious sand in wells is capped at three on average; the original draws a cap of two to four per well.
+- Suspicious sand in wells is drawn by Sunrise's general processors, not the original's own: each well keeps two or three desert-well suspicious sand where the original keeps two to four, and a wishing well's extra-loot sand has no cap where the original allows two to four. Exact counts need a mod's own structure processor ([sunrise-org/sunrise#4922](https://github.com/sunrise-org/sunrise/issues/4922)).
 
 ## Building
 
