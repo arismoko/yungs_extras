@@ -1,6 +1,6 @@
 [package]
 name = "mod-yungsextras"
-version = "0.3.2"
+version = "0.3.3"
 edition = "2024"
 license = "LGPL-3.0-only"
 description = "YUNG's Extras for Sunrise: swamp and desert decorations"
