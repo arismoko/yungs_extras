@@ -13,7 +13,7 @@
   ],
   "processors": [
     {
-      "processor_type": "sunrise:pick",
+      "processor_type": "yungsextras:pick",
       "block": "minecraft:stone_bricks",
       "picks": [
         {
@@ -36,7 +36,7 @@
       }
     },
     {
-      "processor_type": "sunrise:pick",
+      "processor_type": "yungsextras:pick",
       "block": "minecraft:stone_brick_stairs",
       "picks": [
         {
@@ -54,7 +54,7 @@
       "keep_properties": true
     },
     {
-      "processor_type": "sunrise:pick",
+      "processor_type": "yungsextras:pick",
       "block": "minecraft:light_gray_stained_glass",
       "picks": [
         {
@@ -117,7 +117,7 @@
       }
     },
     {
-      "processor_type": "sunrise:yung_pillar",
+      "processor_type": "yungsextras:yung_pillar",
       "target_block": {
         "id": "minecraft:gray_stained_glass"
       },
@@ -161,7 +161,7 @@
       }
     },
     {
-      "processor_type": "sunrise:pick",
+      "processor_type": "yungsextras:pick",
       "block": "minecraft:green_candle",
       "picks": [
         {
