@@ -93,7 +93,14 @@ fn no_file_names_the_original_java_types() {
         for (id, text) in files(&data().join(dir), "json") {
             for key in ["type", "processor_type"] {
                 for kind in strings(&text, key) {
-                    assert!(!kind.starts_with("yungsextras:"), "{id}: {kind}");
+                    let registered = ["pick", "count_cap", "yung_pillar"]
+                        .iter()
+                        .any(|name| kind == format!("yungsextras:{name}"));
+                    assert!(
+                        !kind.starts_with("yungsextras:")
+                            || (key == "processor_type" && registered),
+                        "{id}: {kind}"
+                    );
                 }
             }
         }

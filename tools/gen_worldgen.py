@@ -43,22 +43,22 @@ def candles(lit):
 # SwampFeatureProcessor. Its passes run on the template's own blocks, so each placeholder is
 # rolled once: the brick and stair re-rolls come before the passes that output bricks and stairs.
 SWAMP = [
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:stone_bricks',
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:stone_bricks',
      'picks': [{'below': 0.45, 'state': st('minecraft:mossy_stone_bricks')},
                {'below': 0.9, 'state': st('minecraft:cracked_stone_bricks')}],
      'default': {'state': st('minecraft:stone_bricks')}},
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:stone_brick_stairs',
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:stone_brick_stairs',
      'picks': [{'below': 0.6, 'state': st('minecraft:mossy_stone_brick_stairs')}],
      'default': {'state': st('minecraft:stone_brick_stairs')}, 'keep_properties': True},
     # Ruined stairs: a stair of either kind facing a random horizontal way.
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:light_gray_stained_glass',
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:light_gray_stained_glass',
      'picks': [{'below': 0.6, 'states': [st('minecraft:mossy_stone_brick_stairs', facing=f) for f in FACINGS]}],
      'default': {'states': [st('minecraft:stone_brick_stairs', facing=f) for f in FACINGS]}},
     # Supports: a brick, with a column of bricks down to the ground.
-    {'processor_type': 'sunrise:yung_pillar', 'target_block': st('minecraft:gray_stained_glass'),
+    {'processor_type': 'yungsextras:yung_pillar', 'target_block': st('minecraft:gray_stained_glass'),
      'target_block_output': BRICKS, 'pillar_states': BRICKS},
     # Candles: one of eight colours, one to four of them, lit one time in ten.
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:green_candle',
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:green_candle',
      'picks': [{'below': 0.1, 'states': candles(True)}],
      'default': {'states': candles(False)}},
 ]
@@ -67,11 +67,11 @@ SWAMP = [
 # two, each further one a 1-in-10 roll, three at most on average as the original's 2-4);
 # yellow glass (wishing wells) becomes sand or suspicious sand with the mod's own loot.
 WELL = [
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:brown_stained_glass', 'picks': [],
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:brown_stained_glass', 'picks': [],
      'default': {'state': st('minecraft:suspicious_sand'), 'nbt': {'LootTable': 'minecraft:archaeology/desert_well'}}},
-    {'processor_type': 'sunrise:count_cap', 'blocks': ['minecraft:suspicious_sand'], 'min': 2, 'max': 3,
+    {'processor_type': 'yungsextras:count_cap', 'blocks': ['minecraft:suspicious_sand'], 'min': 2, 'max': 3,
      'chance': 0.1, 'replacement': st('minecraft:sand')},
-    {'processor_type': 'sunrise:pick', 'block': 'minecraft:yellow_stained_glass',
+    {'processor_type': 'yungsextras:pick', 'block': 'minecraft:yellow_stained_glass',
      'picks': [{'below': 0.4, 'state': st('minecraft:suspicious_sand'), 'nbt': {'LootTable': 'yungsextras:desert/extra_archeology'}}],
      'default': {'state': st('minecraft:sand')}},
 ]
