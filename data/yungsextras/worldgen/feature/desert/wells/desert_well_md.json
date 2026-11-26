@@ -31,7 +31,7 @@
         "minecraft:suspicious_sand"
       ],
       "min": 2,
-      "max": 3,
+      "max": 4,
       "chance": 0.1,
       "replacement": {
         "id": "minecraft:sand"

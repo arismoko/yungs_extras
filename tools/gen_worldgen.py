@@ -64,12 +64,12 @@ SWAMP = [
 ]
 
 # DesertWellProcessor: brown glass becomes sand or the vanilla well's suspicious sand (at least
-# two, each further one a 1-in-10 roll, three at most on average as the original's 2-4);
+# two, each further one a 1-in-10 roll, four at most, as the original's 2-4);
 # yellow glass (wishing wells) becomes sand or suspicious sand with the mod's own loot.
 WELL = [
     {'processor_type': 'yungsextras:pick', 'block': 'minecraft:brown_stained_glass', 'picks': [],
      'default': {'state': st('minecraft:suspicious_sand'), 'nbt': {'LootTable': 'minecraft:archaeology/desert_well'}}},
-    {'processor_type': 'yungsextras:count_cap', 'blocks': ['minecraft:suspicious_sand'], 'min': 2, 'max': 3,
+    {'processor_type': 'yungsextras:count_cap', 'blocks': ['minecraft:suspicious_sand'], 'min': 2, 'max': 4,
      'chance': 0.1, 'replacement': st('minecraft:sand')},
     {'processor_type': 'yungsextras:pick', 'block': 'minecraft:yellow_stained_glass',
      'picks': [{'below': 0.4, 'state': st('minecraft:suspicious_sand'), 'nbt': {'LootTable': 'yungsextras:desert/extra_archeology'}}],
