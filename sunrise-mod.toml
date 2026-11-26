@@ -1,7 +1,7 @@
 # YUNG's Extras for Sunrise: native code in src/ with its data/ and assets/.
 id = "yungsextras"
 name = "YUNG's Extras"
-version = "0.3.4"
+version = "0.3.5"
 description = "Swamp ruins and desert decorations: arches, pillars, a ruined church, wells with suspicious sand, obelisks and more."
 authors = ["YUNGNICKYOUNG", "arismoko"]
 license = "LGPL-3.0-only"
@@ -11,4 +11,4 @@ side = "both"
 
 [native]
 game = "26.3"
-sunrise = "6a02076f89cd189d74d63492dda5b023fa85a38f"
+sunrise = "ba1f24e4ad41246b558230aa665539dc768b1287"
