@@ -10,10 +10,6 @@ What it does:
 - Deserts: 9 wells (plain, dry and wishing wells in three sizes), whose sand hides suspicious sand with vanilla's desert-well loot, and in wishing wells the mod's own extra loot; 4 obelisks, a giant torch, small ruins and a chillzone with its loot chest.
 - The original's rarity, biome tags and ground checks: pieces only go on sand in deserts, and nothing hangs over a cliff.
 - Vanilla's desert well no longer generates where the mod's wells do, as in the original.
-
-Differences from the original:
-
-- Suspicious sand in wells is drawn by Sunrise's general processors, not the original's own: each well keeps two or three desert-well suspicious sand where the original keeps two to four, and a wishing well's extra-loot sand has no cap where the original allows two to four. Exact counts need a mod's own structure processor.
 """
 categories = ["worldgen", "decoration"]
 

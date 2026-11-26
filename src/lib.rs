@@ -1,3 +1,4 @@
+#![deny(unsafe_code)]
 //! YUNG's Extras: swamp ruins and desert decorations, placed by the world generation from data.
 //!
 //! Each of the original's Java feature types placed one template centred on the surface after a
